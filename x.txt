@@ -8,3 +8,19 @@ const firebaseConfig = {
   appId: "1:365868967608:web:9adf906a22c55028ff364d",
   measurementId: "G-4J2YSPFF56"
 };
+
+
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
